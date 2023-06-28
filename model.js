@@ -22,11 +22,11 @@ const Tweeter = function() {
     let _postIdCounter = 3
     let _commentIdCounter = 7
 
-    const getPostsMethod = function(){
-        return _posts
+    const getPosts = function(){
+        return [..._posts]
     }
 
-    const addPostMethod = function(postText){
+    const addPost = function(postText){
         _posts.push(
             {
                 id: "p" + _postIdCounter,
@@ -37,14 +37,14 @@ const Tweeter = function() {
         _postIdCounter += 1
     }
 
-    const removePostMethod = function(postId){
+    const removePost = function(postId){
         let postIndex = _posts.findIndex(post => {return post.id == postId})
         if(postIndex != -1){
             _posts.splice(postIndex, 1)
         }
     }
 
-    const addCommentMethod = function(commentText, postId){
+    const addComment = function(commentText, postId){
         let postIndex = _posts.findIndex(post => {return post.id == postId})
         
         if(postIndex != -1){
@@ -58,7 +58,7 @@ const Tweeter = function() {
         }
     }
 
-    const removeCommentMethod = function(postId, commentId){
+    const removeComment = function(postId, commentId){
         let postIndex = _posts.findIndex(post => {return post.id == postId})
         if(postIndex != -1){
             let commentIndex = _posts[postIndex].comments.findIndex(comment => {return comment.id == commentId})
@@ -69,11 +69,11 @@ const Tweeter = function() {
     }
 
     return {
-        getPosts: getPostsMethod,
-        addPost: addPostMethod,
-        removePost: removePostMethod,
-        addComment: addCommentMethod,
-        removeComment: removeCommentMethod
+        getPosts,
+        addPost,
+        removePost,
+        addComment,
+        removeComment
     }
 }
 
