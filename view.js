@@ -12,9 +12,9 @@ const Renderer = function(){
 
                 for(comment of post.comments){
                     commentsHTML += `
-                    <div data-id="${comment.id}}">
+                    <div class="comment" data-id="${comment.id}">
                         ${comment.text}
-                        <span class="delete-comment">delete</span>
+                        <span class="delete-comment">X</span>
                     </div>
                     `
                 }
@@ -24,7 +24,11 @@ const Renderer = function(){
                 <div class="post" data-id="${post.id}">
                     <div class="post-text">${post.text}</div>
                     <div class="comments">${commentsHTML}</div>
-                    <span class="delete">detele</span>
+                    <span class="delete">Delete post</span>
+                    <div class="add-comment">
+                        <input type="text" placeholder="Please enter your comment">
+                        <div class="button">Add comment</div>
+                    </div>
                 </div>
             `
             postsArea.append(postHTML)

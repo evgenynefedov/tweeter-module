@@ -23,7 +23,7 @@ const Tweeter = function() {
     let _commentIdCounter = 7
 
     const getPosts = function(){
-        return [..._posts]
+        return [..._posts].reverse();
     }
 
     const addPost = function(postText){

@@ -68,6 +68,26 @@ body{
     padding: 5px;
     border-radius: 3px;
     font-size: 0.8em;
+    margin-bottom:5px;
+}
+.add-comment input{
+    display: inline-block;
+    padding: 5px;
+    font-size: 0.8em;
+    box-sizing: border-box;
+    border:1px gray solid;
+    border-radius: 3px;
+}
+.add-comment .button{
+    cursor: pointer;
+    color: #ecf0f1;
+    background-color: #3498db;
+    display: inline-block;
+    padding: 5px;
+    font-size: 0.8em;
+    box-sizing: border-box;
+    border: 1px solid #2980b9;
+    border-radius: 3px;
 }
 
 .delete-comment{
